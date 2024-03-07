@@ -1,5 +1,7 @@
 import { View, Text, ScrollView, Alert } from "react-native";
 
+import { router } from "expo-router";
+
 import { styles } from "./styles";
 
 import { Ingredient } from "@/components/Ingredient";
@@ -25,6 +27,10 @@ export default function Index() {
       { text: "Não", style: "cancel" },
       { text: "Sim", onPress: () => setSelected([]) },
     ]);
+  }
+
+  function handleSearch() {
+    router.navigate("/recipes/");
   }
 
   return (
@@ -53,11 +59,13 @@ export default function Index() {
         ))}
       </ScrollView>
 
-      <Selected
-        quantity={selected.length}
-        onClear={handleClearSelected}
-        onSearch={() => {}}
-      />
+      {selected.length > 0 && (
+        <Selected
+          quantity={selected.length}
+          onClear={handleClearSelected}
+          onSearch={handleSearch}
+        />
+      )}
     </View>
   );
 }
