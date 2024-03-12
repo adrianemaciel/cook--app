@@ -19,7 +19,7 @@ export function Selected({ quantity, onClear, onSearch }: Props) {
       exiting={BounceOutDown}
     >
       <View style={styles.header}>
-        <Text style={styles.label}>{quantity} 3 ingredientes selecionados</Text>
+        <Text style={styles.label}>{quantity} ingredientes selecionados</Text>
         <MaterialIcons
           name="close"
           size={24}

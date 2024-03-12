@@ -2,7 +2,7 @@ import { Pressable, PressableProps, Text, Image } from "react-native";
 
 import { styles } from "./styles";
 
-export type IngredientesProps = {
+export type IngredientsProps = {
   name: string;
   image: string;
   selected?: boolean;
@@ -13,7 +13,7 @@ export function Ingredient({
   image,
   selected = false,
   ...rest
-}: IngredientesProps & PressableProps) {
+}: IngredientsProps & PressableProps) {
   return (
     <Pressable
       style={[styles.container, selected && styles.selected]}
